@@ -1,0 +1,11 @@
+# Never commit server files, worlds, mods or secrets
+*.jar
+*.mrpack
+*.zip
+world/
+logs/
+crash-reports/
+eula.txt
+default-creds.txt
+clientmods.txt
+.tools/
