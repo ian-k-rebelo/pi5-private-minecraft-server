@@ -1,0 +1,29 @@
+// Tailscale access policy example: you get full access, your friends can ONLY
+// reach the Minecraft port on the Pi. Paste into the Tailscale admin console:
+// Access controls -> JSON editor (or recreate the two rules in the visual editor).
+//
+// Replace:
+//   YOUR_EMAIL@example.com     the login you use for Tailscale
+//   FRIEND_EMAIL@example.com   your friend's Tailscale login (add more as needed)
+//   100.x.y.z                  the Pi's Tailscale IP (`tailscale ip -4` on the Pi)
+//   25565                      the server-port from server.properties
+{
+  "hosts": {
+    "minecraft-pi": "100.x.y.z"
+  },
+
+  "grants": [
+    // You: everything on your tailnet.
+    {
+      "src": ["YOUR_EMAIL@example.com"],
+      "dst": ["*"],
+      "ip":  ["*"]
+    },
+    // Friends: only the Minecraft server, nothing else (no SSH, no Crafty panel).
+    {
+      "src": ["FRIEND_EMAIL@example.com"],
+      "dst": ["minecraft-pi"],
+      "ip":  ["tcp:25565"]
+    }
+  ]
+}
