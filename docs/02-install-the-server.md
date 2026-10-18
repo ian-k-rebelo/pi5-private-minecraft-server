@@ -16,8 +16,8 @@ Hosting companies recommend **6–8 GB of RAM** for packs this size. A 16 GB Pi 
 ## Option 1: use the script
 
 ```bash
-git clone https://github.com/<you>/<this-repo>.git
-cd <this-repo>/scripts
+git clone https://github.com/ian-k-rebelo/pi5-private-minecraft-server.git
+cd pi5-private-minecraft-server/scripts
 SERVER_DIR=$HOME/minecraft/bmc5 bash install-server.sh better-mc-neoforge-bmc5 v31
 ```
 
@@ -105,7 +105,7 @@ Some mods in the pack are **client-only** (visual tweaks) and crash a dedicated 
 ```
 Run the helper (it parks them in `mods-disabled/`, nothing is deleted). The installer prints this exact command, with full paths, at the end:
 ```bash
-bash ~/<this-repo>/scripts/find-broken-mods.sh ~/minecraft/bmc5
+bash ~/pi5-private-minecraft-server/scripts/find-broken-mods.sh ~/minecraft/bmc5
 ```
 Answer `y`, start again, and repeat if a new crash report appears. For BMC5 v31 one round is enough: it moves **BetterGrassify** and **Distraction Free Recipes**.
 
