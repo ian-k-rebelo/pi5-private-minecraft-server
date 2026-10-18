@@ -68,12 +68,12 @@ Follow in order:
 
 ```bash
 # On the Pi (Raspberry Pi OS 64-bit), as your normal user:
-git clone https://github.com/<you>/<this-repo>.git
-cd <this-repo>/scripts
+git clone https://github.com/ian-k-rebelo/pi5-private-minecraft-server.git
+cd pi5-private-minecraft-server/scripts
 SERVER_DIR=$HOME/minecraft/bmc5 bash install-server.sh better-mc-neoforge-bmc5 v31   # any Modrinth NeoForge pack slug + version
 cd ~/minecraft/bmc5 && ./run.sh nogui
 # Crashed on first start? Park client-only mods:
-bash ~/<this-repo>/scripts/find-broken-mods.sh ~/minecraft/bmc5
+bash ~/pi5-private-minecraft-server/scripts/find-broken-mods.sh ~/minecraft/bmc5
 ```
 
 Then: [Crafty](docs/03-crafty-controller.md) → [VPN](docs/04-vpn-access.md) → send [player setup](docs/06-player-setup.md) to your friends.
